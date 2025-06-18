@@ -1,0 +1,45 @@
+[project]
+name = "codecommit-mcp"
+version = "0.1.0"
+description = "CodeCommit MCP Plugin"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "boto3>=1.38.37",
+    "fastmcp>=2.8.1",
+]
+
+[tool.ruff]
+ignore = [
+    "BLE001", # Too broad exception checking with Except
+    "C901",   # Complex structure
+    "D100",   # Undocumented public module
+    "D104",   # Undocumented public package
+    "D107",   # Missing docstring in __init__
+    "D203",   # No blank line before class docstring
+    "D205",   # No blank line after docstring's first line
+    "D400",   # First line of docstring should end with a period
+    "D415",   # First line of docstring should end with punctuation (period, question mark, exclamation point)
+    "EM101",  # String literal in exception
+    "FIX002", # Line contains TODO comment
+    "G004",   # Using f-strings in logging
+    "INP001", # Missing __init__.py
+    "RUF003", # Ambiguous unicode string
+    "S101",   # Use of assert detected
+    "TD002",  # Missing author in TODO comment
+    "TD003",  # Missing issue link in TODO comment
+    "TRY400", # Using logging.error instead of logging.exception
+]
+fixable = ["ALL"]
+
+exclude = [
+    ".ruff_cache", # Exclude cache directory
+]
+line-length = 120
+indent-width = 4
+target-version = "py313"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.11.13",
+]
